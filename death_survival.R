@@ -1,5 +1,5 @@
 set.seed(221)
-source("util.R")
+source("util.R") # I FUCKING DID IT 
 # STEP 1: Initialize your reef
 #reef <- matrix(0, nrow = 5, ncol = 5)
 #random_coral <- sample(1:25, size = 8)
@@ -95,3 +95,4 @@ for (t in 2:length(years)) {
 # When correct, your code will produce this result for the coral cover percent:
 #  [1] 0.32 0.32 0.32 0.32 0.32 0.32 0.24 0.20 0.16 0.16 0.12
 coral_cover_pct
+banana <- "This is so I can moidfy the code"
