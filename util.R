@@ -40,8 +40,15 @@ growth <- function(reef, roll, row, col) {
 
   growth_row <- row + growth_row_offset[roll]
   growth_col <- col + growth_col_offset[roll]
-
-  reef[growth_row, growth_col] <- 1
-
+  in_bounds <- growth_row >= 1 && growth_row <= 5 && growth_col >= 1 && growth_col <= 5
+  if (in_bounds) {
+   reef[growth_row, growth_col] <- 1 
+  }
   return(reef)
 }
+
+
+roll2d6 <- function() {
+  sum(sample(1:6, size = 2, replace = FALSE))
+}
+  

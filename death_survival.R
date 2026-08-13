@@ -9,7 +9,7 @@ source("util.R")
   #reef[rc_row, rc_col] <- 1
 #}
 # Initialize reef using call to function
-random_corals(8, 5)
+reef <- random_corals(8, 5)
 
 # Your reef should look like this:
 #      [,1] [,2] [,3] [,4] [,5]
@@ -69,7 +69,14 @@ for (t in 2:length(years)) {
           print("Coral died")
           # Update the reef
           reef[r,c] <- 0
-        } else {
+        } 
+        else if (coral_outcome >= 7) {
+          roll <- sample(1:8, size = 1) # Roll the die two times and take sum
+          reef[r,c] <- 1
+          reef <- growth(reef, roll, r, c) # add growth to the new cell if it got a roll above 7
+          print(reef)
+        }
+        else {
           # Survival
           print("Coral survived")
           # Update the reef
